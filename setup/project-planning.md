@@ -1,3 +1,9 @@
+当前项目功能介绍：
+模块：
+dao：作为数据库操作层。使用spring的JdbcTemplate模板实现
+webapp：作为对外提供api接口层，依赖模块dao
+
+
 项目规划：
 1.该项目暂时没有方向，主要作为spring-boot学习用，以各个分支为基础，master作为以后有规划后的主分支，暂时暂存。
 2.每个分支都以初始化分支feature/v1.0作为模板进行功能性开发,并且每个分支中必须在包含setup/project-planning.md文件作为当前分支的功能介绍。
