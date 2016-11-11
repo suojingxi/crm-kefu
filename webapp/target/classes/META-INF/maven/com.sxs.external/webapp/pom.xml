@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sxs.external</groupId>
+		<artifactId>crm-kefu</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<artifactId>webapp</artifactId>
+	<name>webapp</name>
+	<description>webapp</description>
+	<packaging>jar</packaging>
+	<properties>
+        <start-class>com.sxs.external.webapp.Application</start-class>
+	</properties>
+	<dependencies>
+		<dependency>
+            <groupId>com.sxs.external</groupId>
+            <artifactId>dao</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+	</dependencies>
+	<!-- 创建可执行的jar插件 -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<!-- <configuration> <classifier>exec</classifier> </configuration> -->
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainclass>com.sxs.external.webapp.Application</mainclass>
+						</manifest>
+					</archive>
+					<descriptorrefs>
+						<descriptorref>
+							jar-with-dependencies
+						</descriptorref>
+					</descriptorrefs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
