@@ -1,0 +1,10 @@
+com/sxs/external/dao/datasource/DynamicDataSourceContextHolder.class
+com/sxs/external/dao/mapper/ManagerUserInfoMapper.class
+com/sxs/external/dao/model/ManagerUserInfo.class
+com/sxs/external/dao/configurations/DruidDBConfig.class
+com/sxs/external/dao/datasource/TargetDataSource.class
+com/sxs/external/dao/datasource/DynamicDataSourceRegister.class
+com/sxs/external/dao/model/UserInfo.class
+com/sxs/external/dao/mapper/UserInfoMapper.class
+com/sxs/external/dao/datasource/DynamicDataSource.class
+com/sxs/external/dao/datasource/DynamicDataSourceAspect.class

@@ -12,7 +12,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sxs.external.dao.mapper.ManagerUserInfoMapper;
 import com.sxs.external.dao.mapper.UserInfoMapper;
+import com.sxs.external.dao.model.ManagerUserInfo;
 import com.sxs.external.dao.model.UserInfo;
 
 @RestController
@@ -21,6 +23,9 @@ public class UserInfoController {
 
 	@Autowired
 	private UserInfoMapper userInfoMapper;
+	
+	@Autowired
+	private ManagerUserInfoMapper managerUserInfoMapper;
 
 	@RequestMapping(value = "/getUserInfoList")
 	public List<UserInfo> getUserInfoList(HttpServletRequest request, 
@@ -59,5 +64,10 @@ public class UserInfoController {
 			return "success";
 		}
 		return "error";
+	}
+	
+	@RequestMapping(value="/managerUserInfoList")
+	public List<ManagerUserInfo> managerUserInfoList(HttpServletRequest request, HttpServletResponse response, ModelMap modelMap){
+		return managerUserInfoMapper.getList();
 	}
 }
